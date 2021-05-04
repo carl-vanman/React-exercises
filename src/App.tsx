@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react'
 import './App.css';
+import IntroText from './components/startText/Text'
+import ModeBtn from './components/mode/ModeBtn'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	const [mode, setMode] = useState(true)
+
+	const changeState = () => ( mode ? setMode(!mode) : setMode(!mode) )
+
+	let stateClass;
+
+	if( mode ) {
+		stateClass = 'light'
+	} else {
+		stateClass = 'dark'
+	}
+
+	return (
+		<div className={ stateClass + ' App' } >
+			<div className="mode">
+				<ModeBtn state={ mode } changeState={ changeState }/>
+			</div>
+			<div className="introText">
+				<IntroText />
+			</div>
+		</div>
+	);
 }
 
 export default App;
