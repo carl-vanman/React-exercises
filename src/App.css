@@ -1,11 +1,9 @@
 .App {
-	width: 100vw;
+	padding: 2em;
 	height: 100vh;
-	background-color: rgb(36, 29, 29);
-	color: rgb(103, 103, 222);
-
 	display: flex;
 	flex-direction: column;
+	gap: 2em;
 }
 
 .light {
@@ -23,8 +21,11 @@
 }
 
 .mode {
-	flex-grow: 1;
 	align-self: flex-end;
-	margin-right: 2em;
-	margin-top: 2em;
+}
+
+.commercialContainer {
+	background-color: lightblue;
+	height: 200px;
+	border-radius: 20px;
 }
